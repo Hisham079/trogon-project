@@ -32,7 +32,11 @@ class HomeView extends GetView<HomeController> {
                 Text(controller.errorMessage.value),
                 const SizedBox(height: 16),
                 ElevatedButton(
-                  onPressed: () => controller.fetchProducts(),
+                  onPressed: () async {
+                    controller.errorMessage.value = '';
+                    controller.isLoading.value = true;
+                    await controller.fetchProducts();
+                  },
                   child: const Text('Retry'),
                 ),
               ],

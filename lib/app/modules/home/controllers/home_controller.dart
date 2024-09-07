@@ -29,6 +29,13 @@ class HomeController extends GetxController {
   }
 
   @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+    fetchProducts();
+  }
+
+  @override
   void onInit() {
     super.onInit();
     fetchProducts();
